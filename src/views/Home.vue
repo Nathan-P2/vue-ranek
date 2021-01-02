@@ -1,6 +1,7 @@
 <template>
   <section>
     <h1>🤑 Compre ou Venda 💰</h1>
+    <ProdutosLista/>
   </section>
 </template>
 
