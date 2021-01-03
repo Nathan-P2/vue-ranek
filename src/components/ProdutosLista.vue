@@ -14,21 +14,36 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   name: "ProdutosLista",
   data() {
     return {
-      produtos: {}
+      produtos: {},
+      produtosPorPagina: 9
     };
+  },
+  computed: {
+    url() {
+      let key = null;
+      let queryString = "";
+      for (key in this.$route.query) {
+        queryString += `&${key}=${this.$route.query[key]}`;
+      }
+      return `produto?_limit=${this.produtosPorPagina}${queryString}`;
+    }
   },
   methods: {
     fetchProdutos() {
-      axios.get("http://localhost:3000/produto")
-        .then(response => {
-          this.produtos = response.data;
-        })
+      axios.get("http://localhost:3000/" + this.url).then(response => {
+        this.produtos = response.data;
+      });
+    }
+  },
+  watch: {
+    url() {
+      this.fetchProdutos();
     }
   },
   created() {
