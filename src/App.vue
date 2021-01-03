@@ -2,7 +2,9 @@
   <div id="app">
     <Header />
     <main>
-      <router-view></router-view>
+      <transition mode="out-in">
+        <router-view></router-view>
+      </transition>
     </main>
     <Footer />
   </div>
@@ -56,6 +58,10 @@ img {
   display: block;
 }
 
+label {
+  margin-bottom: 5px;
+}
+
 .btn {
   display: block;
   padding: 10px 30px;
@@ -74,6 +80,12 @@ img {
 .btn:hover {
   background: #65d;
   transform: scale(1.1);
+}
+
+.btn:focus {
+  outline: thin dotted;
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: 0px;
 }
 
 #app {
@@ -105,5 +117,23 @@ textarea:focus {
   outline: none;
   box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
   border-color: #87f;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px, 0);
+}
+
+.v-leave-to {
+  transform: translate3d(0, 20px, 0);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
 }
 </style>
