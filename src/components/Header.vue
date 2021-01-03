@@ -4,7 +4,10 @@
       <router-link to="/" class="logo">
         <img src="@/assets/ranek.svg" alt="Renek" />
       </router-link>
-      <router-link to="/login" class="btn">
+      <router-link v-if="login" to="/usuario" class="btn">
+        {{ nome }}
+      </router-link>
+      <router-link v-else to="/login" class="btn">
         Vender / Login
       </router-link>
     </nav>
@@ -12,8 +15,16 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
-  name: "Header"
+  name: "Header",
+  computed: {
+    ...mapState(["login", "usuario"]),
+    nome() {
+      return this.usuario.nome.replace(/ .*/, "");
+    }
+  }
 };
 </script>
 

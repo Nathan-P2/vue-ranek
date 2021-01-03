@@ -10,6 +10,17 @@
       "numero": "25",
       "estado": "RJ",
       "cidade": "Rio de Janeiro"
+    },
+    {
+      "id": "nathan@gmail.com",
+      "email": "nathan@gmail.com",
+      "nome": "Nathan Pereira",
+      "senha": "123",
+      "rua": "Rua Ali Perto",
+      "cep": "12345678",
+      "numero": "25",
+      "estado": "SP",
+      "cidade": "São José dos Campos"
     }
   ],
   "produto": [
