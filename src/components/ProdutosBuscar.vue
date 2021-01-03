@@ -1,7 +1,13 @@
 <template>
   <div>
     <form>
-      <input type="text" id="busca" name="busca" v-model="busca" placeholder="Buscar produto..." />
+      <input
+        type="text"
+        id="busca"
+        name="busca"
+        v-model="busca"
+        placeholder="Buscar produto..."
+      />
       <input
         type="submit"
         id="lupa"
@@ -44,7 +50,7 @@ form {
 #lupa {
   width: 62px;
   height: 62px;
-  background: url('../assets/search.svg') no-repeat center center;
+  background: url("../assets/search.svg") no-repeat center center;
   text-indent: -150px;
   border: none;
   cursor: pointer;
