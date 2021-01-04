@@ -1,4 +1,28 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "nathan.pereira0201@gmail.com",
+      "vendedor_id": "andre@origamid.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "andre@origamid.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "12228265",
+        "rua": "Rua Santo Moratore",
+        "numero": "111",
+        "bairro": "Residencial Juritis",
+        "cidade": "São José dos Campos",
+        "estado": "SP"
+      },
+      "id": 1
+    }
+  ],
   "usuario": [
     {
       "id": "andre@origamid.com",

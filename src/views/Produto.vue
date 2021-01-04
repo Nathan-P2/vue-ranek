@@ -1,18 +1,23 @@
 <template>
   <section>
     <div v-if="produto" class="produto">
-      <div class="info">
-        <h1>{{ produto.nome }}</h1>
-        <p class="preco">{{ produto.preco | numeroPreco }}</p>
-        <p class="descricao">{{ produto.descricao }}</p>
-        <button class="btn" v-if="produto.vendido === 'false'">Comprar</button>
-        <button class="btn" disabled v-else>Produto Vendido</button>
-      </div>
-      <ul class="fotos">
+      <ul class="fotos" v-if="produto.fotos">
         <li v-for="(foto, index) in produto.fotos" :key="index">
           <img :src="foto.src" :alt="foto.titulo" />
         </li>
       </ul>
+      <div class="info">
+        <h1>{{ produto.nome }}</h1>
+        <p class="preco">{{ produto.preco | numeroPreco }}</p>
+        <p class="descricao">{{ produto.descricao }}</p>
+        <transition mode="out-in" v-if="produto.vendido === 'false'">
+          <button class="btn" v-if="!finalizar" @click="finalizar = true">
+            Comprar
+          </button>
+          <FinalizarCompra v-else :produto="produto" />
+        </transition>
+        <button v-else class="btn" disabled>Produto Vendido</button>
+      </div>
     </div>
     <PaginaCarregando v-else />
   </section>
@@ -20,25 +25,30 @@
 
 <script>
 import axios from "axios";
+import FinalizarCompra from "@/components/FinalizarCompra.vue";
 
 export default {
-  name: "Produto",
+  name: "Produtos",
   props: ["id"],
+  components: {
+    FinalizarCompra,
+  },
   data() {
     return {
-      produto: null
+      produto: null,
+      finalizar: false,
     };
   },
   methods: {
-    fetchData() {
-      axios.get(`http://localhost:3000/produto/${this.id}`).then(response => {
+    getProduto() {
+      axios.get(`http://localhost:3000/produto/${this.id}`).then((response) => {
         this.produto = response.data;
       });
-    }
+    },
   },
   created() {
-    this.fetchData();
-  }
+    this.getProduto();
+  },
 };
 </script>
 
@@ -48,7 +58,7 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-gap: 30px;
   max-width: 900px;
-  padding: 60px;
+  padding: 60px 20px;
   margin: 0 auto;
 }
 
