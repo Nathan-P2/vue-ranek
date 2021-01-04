@@ -36,13 +36,13 @@ import ProdutosPaginar from "@/components/ProdutosPaginar.vue";
 export default {
   name: "ProdutosLista",
   components: {
-    ProdutosPaginar
+    ProdutosPaginar,
   },
   data() {
     return {
       produtos: {},
       produtosPorPagina: 9,
-      produtosTotal: 0
+      produtosTotal: 0,
     };
   },
   computed: {
@@ -53,27 +53,27 @@ export default {
         queryString += `&${key}=${this.$route.query[key]}`;
       }
       return `produto?_limit=${this.produtosPorPagina}${queryString}`;
-    }
+    },
   },
   methods: {
     fetchProdutos() {
       this.produtos = null;
       window.setTimeout(() => {
-        axios.get("http://localhost:3000/" + this.url).then(response => {
+        axios.get("http://localhost:3000/" + this.url).then((response) => {
           this.produtos = response.data;
           this.produtosTotal = Number(response.headers["x-total-count"]);
         });
       }, 1500);
-    }
+    },
   },
   watch: {
     url() {
       this.fetchProdutos();
-    }
+    },
   },
   created() {
     this.fetchProdutos();
-  }
+  },
 };
 </script>
 

@@ -18,8 +18,8 @@ export default new Vuex.Store({
       numero: "",
       bairro: "",
       cidade: "",
-      estado: ""
-    }
+      estado: "",
+    },
   },
   mutations: {
     UPDATE_LOGIN(state, payload) {
@@ -27,15 +27,15 @@ export default new Vuex.Store({
     },
     UPDATE_USUARIO(state, payload) {
       state.usuario = Object.assign(state.usuario, payload);
-    }
+    },
   },
   actions: {
     getUsuario(context, payload) {
-      axios.get(`http://localhost:3000/usuario/${payload}`).then(response => {
+      axios.get(`http://localhost:3000/usuario/${payload}`).then((response) => {
         context.commit("UPDATE_USUARIO", response.data);
         context.commit("UPDATE_LOGIN", true);
       });
-    }
+    },
   },
-  modules: {}
+  modules: {},
 });

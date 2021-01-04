@@ -2,7 +2,9 @@
   <section>
     <h2>Cadastre-se!</h2>
     <transition mode="out-in">
-      <button v-if="!criar" @click="criar=true" class="btn criar">Criar Conta</button>
+      <button v-if="!criar" @click="criar = true" class="btn criar">
+        Criar Conta
+      </button>
       <UsuarioForm v-else>
         <button class="btn">Cadastro</button>
       </UsuarioForm>
@@ -11,17 +13,17 @@
 </template>
 
 <script>
-import UsuarioForm from "@/components/UsuarioForm.vue"
+import UsuarioForm from "@/components/UsuarioForm.vue";
 export default {
   name: "LoginCriar",
   components: {
-    UsuarioForm
+    UsuarioForm,
   },
   data() {
     return {
       criar: false,
-    }
-  }
+    };
+  },
 };
 </script>
 

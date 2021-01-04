@@ -23,8 +23,8 @@ export default {
     ...mapState(["login", "usuario"]),
     nome() {
       return this.usuario.nome.replace(/ .*/, "");
-    }
-  }
+    },
+  },
 };
 </script>
 

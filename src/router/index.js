@@ -11,24 +11,24 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/produto/:id",
     name: "produto",
     component: Produto,
-    props: true
+    props: true,
   },
   {
     path: "/login",
     name: "login",
-    component: Login
+    component: Login,
   },
   {
     path: "/usuario",
     name: "usuario",
-    component: Usuario
-  }
+    component: Usuario,
+  },
 ];
 
 const router = new VueRouter({
@@ -36,7 +36,7 @@ const router = new VueRouter({
   routes,
   scrollBehavior() {
     return window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  },
 });
 
 export default router;
