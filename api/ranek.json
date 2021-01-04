@@ -21,6 +21,66 @@
       "numero": "25",
       "estado": "SP",
       "cidade": "São José dos Campos"
+    },
+    {
+      "id": "maria@gmail.com",
+      "nome": "Maria Madalena",
+      "email": "maria@gmail.com",
+      "senha": "123",
+      "cep": "12228265",
+      "rua": "Rua Santo Moratore",
+      "numero": "177",
+      "bairro": "Residencial Juritis",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
+    },
+    {
+      "id": "joao@gmail.com",
+      "nome": "Joao da Silva",
+      "email": "joao@gmail.com",
+      "senha": "123",
+      "cep": "12228265",
+      "rua": "Rua Santo Moratore",
+      "numero": "111",
+      "bairro": "Residencial Juritis",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
+    },
+    {
+      "id": "nathan.pereira0201@gmail.com",
+      "nome": "Nathan Felipe Pereira",
+      "email": "nathan.pereira0201@gmail.com",
+      "senha": "132",
+      "cep": "12228265",
+      "rua": "Rua Santo Moratore",
+      "numero": "111",
+      "bairro": "Residencial Juritis",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
+    },
+    {
+      "id": "nathanux@gmail.com",
+      "nome": "Nathan Felipe Pereira",
+      "email": "nathanux@gmail.com",
+      "senha": "132",
+      "cep": "12228265",
+      "rua": "Rua Santo Moratore",
+      "numero": "111",
+      "bairro": "Residencial Juritis",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
+    },
+    {
+      "id": "aaa@gmail.com",
+      "nome": "Nathan Felipe Pereira",
+      "email": "aaa@gmail.com",
+      "senha": "123",
+      "cep": "12228265",
+      "rua": "Rua Santo Moratore",
+      "numero": "111",
+      "bairro": "Residencial Juritis",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
     }
   ],
   "produto": [

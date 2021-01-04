@@ -23,14 +23,14 @@ export default {
   name: "ProdutosBuscar",
   data() {
     return {
-      busca: "",
+      busca: ""
     };
   },
   methods: {
     buscarProdutos() {
       this.$router.push({ query: { q: this.busca } });
-    },
-  },
+    }
+  }
 };
 </script>
 

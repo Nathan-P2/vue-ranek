@@ -31,10 +31,16 @@ export default new Vuex.Store({
   },
   actions: {
     getUsuario(context, payload) {
-      axios.get(`http://localhost:3000/usuario/${payload}`).then((response) => {
-        context.commit("UPDATE_USUARIO", response.data);
-        context.commit("UPDATE_LOGIN", true);
-      });
+      return axios
+        .get(`http://localhost:3000/usuario/${payload}`)
+        .then((response) => {
+          context.commit("UPDATE_USUARIO", response.data);
+          context.commit("UPDATE_LOGIN", true);
+        });
+    },
+    postUsuario(context, payload) {
+      context.commit("UPDATE_USUARIO", { id: payload.email });
+      return axios.post("http://localhost:3000/usuario", payload);
     },
   },
   modules: {},

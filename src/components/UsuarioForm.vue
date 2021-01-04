@@ -40,31 +40,29 @@ export default {
         "numero",
         "bairro",
         "cidade",
-        "estado",
+        "estado"
       ],
       base: "usuario",
-      mutation: "UPDATE_USUARIO",
-    }),
+      mutation: "UPDATE_USUARIO"
+    })
   },
   methods: {
     fetchCep() {
-      axios
-        .get(`https://viacep.com.br/ws/${this.cep}/json/`)
-        .then((response) => {
-          this.rua = response.data.logradouro;
-          this.bairro = response.data.bairro;
-          this.estado = response.data.uf;
-          this.cidade = response.data.localidade;
-        });
-    },
+      axios.get(`https://viacep.com.br/ws/${this.cep}/json/`).then(response => {
+        this.rua = response.data.logradouro;
+        this.bairro = response.data.bairro;
+        this.estado = response.data.uf;
+        this.cidade = response.data.localidade;
+      });
+    }
   },
   watch: {
     cep() {
       if (this.cep.length === 8) {
         return this.fetchCep();
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

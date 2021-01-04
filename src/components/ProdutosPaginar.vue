@@ -11,20 +11,20 @@ export default {
   props: {
     produtosPorPagina: {
       type: Number,
-      default: 1,
+      default: 1
     },
     produtosTotal: {
       type: Number,
-      default: 1,
-    },
+      default: 1
+    }
   },
   methods: {
     query(pagina) {
       return {
         ...this.$route.query,
-        _page: pagina,
+        _page: pagina
       };
-    },
+    }
   },
   computed: {
     paginas() {
@@ -46,8 +46,8 @@ export default {
     paginasTotal() {
       const total = this.produtosTotal / this.produtosPorPagina;
       return total != Infinity ? Math.ceil(total) : 0;
-    },
-  },
+    }
+  }
 };
 </script>
 

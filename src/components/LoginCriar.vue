@@ -6,7 +6,9 @@
         Criar Conta
       </button>
       <UsuarioForm v-else>
-        <button class="btn">Cadastro</button>
+        <button class="btn" @click.prevent="criarUsuario">
+          Cadastro
+        </button>
       </UsuarioForm>
     </transition>
   </section>
@@ -14,15 +16,29 @@
 
 <script>
 import UsuarioForm from "@/components/UsuarioForm.vue";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "LoginCriar",
   components: {
     UsuarioForm,
   },
+  computed: {
+    ...mapState(["usuario"]),
+  },
   data() {
     return {
       criar: false,
     };
+  },
+  methods: {
+    ...mapActions(["postUsuario"]),
+    ...mapActions(["getUsuario"]),
+    async criarUsuario() {
+      await this.postUsuario(this.usuario).then(() => {
+        this.getUsuario(this.usuario.email);
+        this.$router.push({ name: "usuario" });
+      });
+    },
   },
 };
 </script>
