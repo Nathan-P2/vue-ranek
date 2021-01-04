@@ -21,22 +21,22 @@ import LoginCriar from "@/components/LoginCriar.vue";
 export default {
   name: "Login",
   components: {
-    LoginCriar
+    LoginCriar,
   },
   data() {
     return {
       login: {
         email: "",
-        senha: ""
-      }
+        senha: "",
+      },
     };
   },
   methods: {
     logar() {
       this.$store.dispatch("getUsuario", this.login.email);
       this.$router.push({ name: "usuario" });
-    }
-  }
+    },
+  },
 };
 </script>
 
